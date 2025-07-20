@@ -1,103 +1,113 @@
-import Image from "next/image";
+import {
+  GithubIcon,
+  Upload,
+  PencilRulerIcon,
+  Sparkles,
+  ScanEye,
+  MoonStar,
+  FilePenIcon,
+  Download,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main>
+      <header className="flex items-center justify-between p-3 border-b border-gray-300">
+        <h1>SVG FavIcon Editor</h1>
+        <Link href="https://github.com/letyassine/SVGFavIconEditor">
+          <GithubIcon />
+        </Link>
+      </header>
+      <section className="flex justify-center py-10 border-b border-gray-300">
+        <h1 className="font-semibold text-2xl max-w-xl text-center">
+          Upload an SVG favicon and automatically adapt it for dark mode using
+          CSS media queries
+        </h1>
+      </section>
+      <section className="py-3 border-b border-gray-300">
+        <p className="flex justify-center gap-1 items-center">
+          <Upload size={18} />
+          Upload or Paste SVG
+        </p>
+        <div className="flex items-center flex-col gap-2 px-2 sm:flex-row w-full justify-between mt-3">
+          <div className="w-full text-sm flex items-center gap-2 justify-center min-h-[200px] flex-1/2 border border-gray-300 border-dashed rounded">
+            <Upload size={16} /> Choose File Or Drag and Drop
+          </div>
+          <textarea
+            placeholder="Paste your SVG code here..."
+            className="w-full min-h-[200px] border border-gray-300 rounded p-3 flex-1/2 font-mono text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+      <section className="pt-3 border-b border-gray-300">
+        <p className="flex justify-center gap-1 items-center">
+          <PencilRulerIcon size={18} />
+          Color Configuration
+        </p>
+        <div className="flex flex-col sm:flex-row items-center border-t mt-3 border-gray-300 justify-between">
+          <div className="border-b w-full sm:border-r sm:border-b-0 border-gray-300 flex-1/2 p-3">
+            <h1>Light Mode Color</h1>
+            <div className="flex items-center gap-1 mt-2">
+              <input
+                type="color"
+                className="w-12 h-10 border border-gray-300 rounded"
+              />
+              <input
+                type="text"
+                className="flex-1 p-2 border border-gray-300 rounded font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+          </div>
+          <div className="w-full flex-1/2 p-3">
+            <h1>Dark Mode Color</h1>
+            <div className="flex items-center gap-1 mt-2">
+              <input
+                type="color"
+                className="w-12 h-10 border border-gray-300 rounded"
+              />
+              <input
+                type="text"
+                className="flex-1 p-2 border border-gray-300 rounded font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="pt-3 border-b border-gray-300">
+        <p className="flex justify-center gap-1 items-center">
+          <Sparkles size={18} />
+          Results
+        </p>
+        <div className="mt-3 border-t flex flex-col sm:flex-row border-gray-300">
+          <div className="p-3 flex-1/2 border-b w-full sm:border-r sm:border-b-0 border-gray-300">
+            <div className="flex items-center justify-between">
+              <h1 className="flex items-center gap-1">
+                <ScanEye size={18} />
+                Preview
+              </h1>
+              <MoonStar size={18} />
+            </div>
+            <textarea className="w-full mt-3 min-h-[200px] border border-gray-300 rounded p-3 flex-1/2 font-mono text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+          </div>
+          <div className="p-3 flex-1/2">
+            <div className="flex items-center justify-between">
+              <h1 className="flex items-center gap-1">
+                <FilePenIcon size={18} />
+                Modified SVG
+              </h1>
+              <Download size={18} />
+            </div>
+            <textarea
+              placeholder="Paste your SVG code here..."
+              className="w-full mt-3 min-h-[200px] border border-gray-300 rounded p-3 flex-1/2 font-mono text-sm resize-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+        </div>
+      </section>
+      <footer className="text-sm bottom-0 px-3 py-6">
+        Created with love by Yassine H.
       </footer>
-    </div>
+    </main>
   );
 }
