@@ -1,3 +1,3 @@
-# SVG FavIcon Editor 🎨
+# SVGStyleShift 🎨
 
-A modern web tool that automatically adapts SVG favicons to match users' system theme preferences (light/dark mode).
+Web tool that automatically adapts SVG favicons to match users' system theme preferences (light/dark mode).

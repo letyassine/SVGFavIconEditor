@@ -13,9 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SVG FavIcon Editor",
+  title: "SVGStyleShift",
   description:
-    "A modern web tool that automatically adapts SVG favicons to match users' system theme preferences (light/dark mode).",
+    "A modern web tool that automatically adapts SVG to match users' system theme preferences (light/dark mode).",
+  icons: [
+    {
+      rel: "icon",
+      url: "/favicon.svg",
+      type: "image/svg+xml",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -25,11 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      </head>
       <body
-        cz-shortcut-listen="true"
         className={`${geistSans.variable} ${geistMono.variable} border-x border-gray-300 h-screen antialiased max-w-4xl mx-auto`}
       >
         {children}

@@ -259,7 +259,7 @@ export default function Home() {
         </div>
       )}
       <header className="flex items-center justify-between p-3 border-b border-gray-300">
-        <h1 className="font-semibold text-lg">SVG FavIcon Editor</h1>
+        <h1 className="font-semibold text-lg">SVGStyleShift </h1>
         <Link href="https://github.com/letyassine/SVGFavIconEditor">
           <GithubIcon className="hover:text-gray-600 transition-colors" />
         </Link>
@@ -267,8 +267,8 @@ export default function Home() {
 
       <section className="flex justify-center py-10 border-b border-gray-300">
         <h1 className="font-semibold text-2xl max-w-xl text-center">
-          Upload an SVG favicon and automatically adapt it for dark mode using
-          CSS media queries
+          Upload an SVG and automatically adapt it for dark mode using CSS media
+          queries
         </h1>
       </section>
 
